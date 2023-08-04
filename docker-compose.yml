@@ -268,6 +268,8 @@ services:
         ports:
             - '192.168.0.148:${JICOFO_REST_PORT:-8888}:8888'
         #    - '127.0.0.1:${JICOFO_REST_PORT:-8888}:8888'
+        ######################This is For WAN######################
+            # - '1.214.25.115:${JICOFO_REST_PORT:-8888}:8888'
         volumes:
             - ${CONFIG}/jicofo:/config:Z
         environment:
@@ -336,6 +338,8 @@ services:
         ports:
             - '${JVB_PORT:-10000}:${JVB_PORT:-10000}/udp'
             # - '127.0.0.1:${JVB_COLIBRI_PORT:-8080}:8080'
+            ######################This is For WAN######################
+            # - '1.214.25.115:${JVB_COLIBRI_PORT:-8080}:8080'
             - '192.168.0.148:${JVB_COLIBRI_PORT:-8080}:8080'
         volumes:
             - ${CONFIG}/jvb:/config:Z
@@ -385,6 +389,9 @@ services:
             - '${JVB_PORT:-10001}:${JVB_PORT:-10001}/udp'
             - '192.168.0.148:${JVB_COLIBRI_PORT:-8081}:8080'
             # - '127.0.0.1:${JVB_COLIBRI_PORT:-8081}:8080'
+            ######################This is For WAN######################
+            # - '1.214.25.115:${JVB_COLIBRI_PORT:-8081}:8080'
+            
         volumes:
             - ${CONFIG}/jvb:/config:Z
         environment:
